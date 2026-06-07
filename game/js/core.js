@@ -246,6 +246,15 @@
 
     overlay: function () { return qs('#overlay'); },
     openOverlay: function (node) {
+      // For panels, move content into a non-scrolling shell so the decorative
+      // frame tracks the panel and the close button is never clipped.
+      if (node.classList && node.classList.contains('panel')) {
+        var scroll = el('div', 'panel-scroll');
+        Array.prototype.slice.call(node.children).forEach(function (ch) {
+          if (!(ch.classList && ch.classList.contains('closeX'))) scroll.appendChild(ch);
+        });
+        node.appendChild(scroll);
+      }
       var o = qs('#overlay'); o.innerHTML = ''; o.appendChild(node);
       o.classList.remove('hidden');
       G.Audio.sfx('open');

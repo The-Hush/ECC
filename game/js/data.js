@@ -244,49 +244,49 @@
   var ZONES = [
     {
       id: 'greenmoor', name: 'Greenmoor Plains', theme: 'grass',
-      topics: ['matter'], recLevel: 1, mapX: 0.16, mapY: 0.66,
+      topics: ['s1_1', 's1_2'], recLevel: 1, mapX: 0.16, mapY: 0.66,
       enemies: ['gloop', 'meadowsprite', 'thornbeetle'], boss: 'kingslime',
       requires: null,
       intro: 'Rolling green hills dotted with wildflowers. Slimes wobble through the grass.'
     },
     {
       id: 'whisperwood', name: 'Whisperwood', theme: 'forest',
-      topics: ['atomic'], recLevel: 4, mapX: 0.34, mapY: 0.42,
+      topics: ['s1_3', 's3_1'], recLevel: 4, mapX: 0.34, mapY: 0.42,
       enemies: ['capling', 'pixie', 'duskwolf'], boss: 'eldwarden',
       requires: 'kingslime',
       intro: 'Ancient trees crowd close, their leaves whispering of atoms unseen.'
     },
     {
       id: 'crypt', name: 'Sunless Crypt', theme: 'dungeon',
-      topics: ['periodic'], recLevel: 7, mapX: 0.5, mapY: 0.66,
+      topics: ['s2_1', 's2_2'], recLevel: 7, mapX: 0.5, mapY: 0.66,
       enemies: ['bonewalker', 'cryptbat', 'palewraith'], boss: 'skellord',
       requires: 'eldwarden',
       intro: 'A cold dungeon of carved stone. The dead keep an orderly table here.'
     },
     {
       id: 'emberforge', name: 'Emberforge Caverns', theme: 'volcano',
-      topics: ['reactions', 'stoich'], recLevel: 9, mapX: 0.66, mapY: 0.42,
+      topics: ['r1_1', 'r1_2', 'r1_3'], recLevel: 9, mapX: 0.66, mapY: 0.42,
       enemies: ['cinderimp', 'magmite', 'ashwisp'], boss: 'cinderwyrm',
       requires: 'skellord',
       intro: 'Rivers of magma light the cavern red. Reactions roar in the heat.'
     },
     {
       id: 'frostspire', name: 'Frostspire Peaks', theme: 'snow',
-      topics: ['gases'], recLevel: 12, mapX: 0.5, mapY: 0.2,
+      topics: ['s1_4', 's1_5'], recLevel: 12, mapX: 0.5, mapY: 0.2,
       enemies: ['frostsprite', 'rimegolem', 'snowstalker'], boss: 'glacialtitan',
       requires: 'cinderwyrm',
       intro: 'Wind howls across frozen peaks where gases freeze in the thin air.'
     },
     {
       id: 'mirefen', name: 'Mirefen Swamp', theme: 'swamp',
-      topics: ['solutions', 'acids'], recLevel: 15, mapX: 0.8, mapY: 0.64,
+      topics: ['r3_1', 'r2_3', 's2_3'], recLevel: 15, mapX: 0.8, mapY: 0.64,
       enemies: ['bogtoad', 'gasspore', 'mirewisp'], boss: 'plaguehag',
       requires: 'glacialtitan',
       intro: 'A reeking bog of strange brews. Every puddle is a fresh solution.'
     },
     {
       id: 'spire', name: "The Alchemist's Spire", theme: 'spire',
-      topics: ['bonding', 'thermo', 'stoich', 'acids'], recLevel: 18, mapX: 0.82, mapY: 0.26,
+      topics: ['r2_1', 'r2_2', 'r3_2', 's2_4'], recLevel: 18, mapX: 0.82, mapY: 0.26,
       enemies: ['homunculus', 'brasssentinel', 'hexbat'], boss: 'archmagister',
       requires: 'plaguehag',
       intro: 'The black tower of Mortcrucible. The final trial of the Crucible awaits at its peak.'

@@ -1,5 +1,5 @@
 /* ============================================================
-   CRUCIBLE — A Chymical Quest
+   CRUCIBLE - A Chymical Quest
    Medieval RPG styling: parchment, oak, banners, gold leaf.
    ============================================================ */
 
@@ -141,13 +141,21 @@ body{
   border:5px solid var(--oak-dark);
   border-radius:16px;
   box-shadow:var(--shadow), inset 0 0 0 3px var(--parch-edge);
-  padding:22px 24px;
+  padding:20px 22px;
   max-width:760px; width:90%;
-  max-height:90%; overflow:auto;
+  max-height:90%;
+  display:flex; flex-direction:column;
+  overflow:visible;            /* let the close button sit at the corner */
 }
-.panel::before{ /* corner rivets */
+/* inner content scrolls; the panel frame stays put */
+.panel-scroll{
+  overflow-y:auto; overflow-x:hidden;
+  flex:1 1 auto; min-height:0;
+  padding-right:4px;
+}
+.panel::before{ /* dashed inner frame, tracks the visible panel */
   content:""; position:absolute; inset:8px; border:2px dashed rgba(122,84,32,.35);
-  border-radius:10px; pointer-events:none;
+  border-radius:10px; pointer-events:none; z-index:1;
 }
 .panel.narrow{ max-width:460px; }
 .panel h2{
@@ -188,11 +196,15 @@ body{
 .btn-row{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
 
 .closeX{
-  position:absolute; top:-14px; right:-14px; width:40px; height:40px; border-radius:50%;
+  position:absolute; top:10px; right:10px; width:36px; height:36px; border-radius:50%;
   background:linear-gradient(180deg,#c1463a,var(--crimson-deep)); color:#fff;
-  border:3px solid #4a0f0f; font-size:20px; cursor:pointer; box-shadow:var(--shadow);
-  font-family:var(--font-head);
+  border:3px solid #4a0f0f; font-size:19px; line-height:1; cursor:pointer;
+  box-shadow:0 3px 0 rgba(0,0,0,.3); font-family:var(--font-head);
+  z-index:5; display:flex; align-items:center; justify-content:center;
 }
+.closeX:active{ transform:translateY(2px); box-shadow:0 1px 0 rgba(0,0,0,.3); }
+/* keep panel headings clear of the close button */
+.panel h2{ padding:0 28px; }
 
 /* ---------- title screen ---------- */
 #titleWrap{ text-align:center; }
